@@ -1,0 +1,8 @@
+.navbar-nav,
+.nav-item a {
+  height: 7vh;
+}
+
+.nav-item a {
+  line-height: 5vh;
+}
