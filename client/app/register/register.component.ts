@@ -54,7 +54,8 @@ export class RegisterComponent implements OnInit {
   role = new FormControl('', [
     Validators.required,
   ]);
-
+  note = {};
+  stats = [];
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               public toast: ToastComponent,
@@ -70,6 +71,11 @@ export class RegisterComponent implements OnInit {
       membre3: this.membre3,
       membre4: this.membre4,
       role: this.role,
+      note: this.note = { elimine: false, round1: { index: 1, uxdesign: -1, fonctionnalites: -1, pitch: -1 },
+        round2: { index: 2, uxdesign: -1, fonctionnalites: -1, pitch: -1 },
+        round3: { index: 3, uxdesign: -1, fonctionnalites: -1, pitch: -1 } },
+      stats: this.stats,
+
     });
   }
 

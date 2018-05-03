@@ -19,6 +19,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StatsComponent } from './stats/stats.component';
+import { ConcoursComponent } from './concours/concours.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -37,6 +38,7 @@ export function tokenGetter() {
     NotFoundComponent,
     NavbarComponent,
     StatsComponent,
+    ConcoursComponent,
   ],
   imports: [
     RoutingModule,

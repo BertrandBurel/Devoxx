@@ -7,4 +7,5 @@ export class User {
   membre3?: string;
   membre4?: string;
   role?: string;
+  note: object;
 }
