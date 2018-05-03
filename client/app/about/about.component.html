@@ -62,23 +62,19 @@
 </div> -->
 <!-- ========== HEADER SECTION ========== -->
 <section id="home" name="home" #animeObject></section>
+
 <div id="headerwrap">
   <div class="container">
-    <div class="logo">
-      <img src="assets/img/logo.png">
-    </div>
-    <br>
     <div class="row">
-      <div class="col-6 offset-3">
-        <h1 #animeTitle>Battle Dev'alhalla</h1>
-        <h3 #animeSousTitle>Welcome to the next gen battle.</h3>
+      <div class="col-8 offset-2">
+        <h1 id="h1title" #animeTitle>Battle Dev'alhalla</h1>
+        <h3 id="h3title" #animeSousTitle>Welcome to the next gen battle.</h3>
       </div>
     </div>
   </div>
   <!-- /container -->
 </div>
 <!-- /headerwrap -->
-
 
 
 <!-- ========== ABOUT SECTION ========== -->
@@ -88,50 +84,61 @@
     <div class="row">
       <div class="col-12">
         <div class="row">
-          <div class="col-8 offset-2 nextevent">
+          <div class="col-10 offset-1 nextevent">
             <div class="row">
-              <div class="col-8 gris">
+              <div class="col-8 gris nextevent-item">
                 <div class="row">
                   <div class="col-12">
-                    <p>Officia occaecat consequat in.</p>
-                    <h3>Eiusmod quist esse.</h3>
-                    <p>Officia occaecat ipsum quis commodo tempor eu non aliqua adipisicing aliqua consequat in.</p>
+                    <h3 class="text-left mrgbt-20">Prochain Battle :</h3>
+                    <p class="text-left mrgbt-20">Pour participer au prochain
+                      <strong>Battle Dev'alhalla</strong>, c'est par ici.</p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-4">
-                    <p>Consectetur</p>
-                    <p>Consectetur 123</p>
+                    <p class="ouquiquoi text-left">
+                      <i class="fa fa-map-marker"></i> Où</p>
+                    <p class="text-left">Paris, Palais des congrès</p>
                   </div>
                   <div class="col-4">
-                    <p>Consectetur</p>
-                    <p>Consectetur 123</p>
+                    <p class="ouquiquoi text-left">
+                      <i class="fa fa-ticket"></i> Qui ?</p>
+                    <p class="text-left">1500 participants</p>
                   </div>
                   <div class="col-4">
-                    <p>Consectetur</p>
-                    <p>Consectetur 123</p>
+                    <p class="ouquiquoi text-left">
+                      <i class="fa fa-microphone"></i> Quoi ?</p>
+                    <p class="text-left">150 match à mort en équipe</p>
                   </div>
                 </div>
               </div>
-              <div class="col-4 rouge">
-                <div class="row">
+              <div class="col-4 rouge nextevent-item">
+                <div class="row mrgbt-20">
                   <div class="col-5 offset-1">
-                    <p>00</p>
-                    <p>Jours</p>
+                    <div class="redblock">
+                      <p>00</p>
+                      <p>Jours</p>
+                    </div>
                   </div>
                   <div class="col-5">
-                    <p>00</p>
-                    <p>Heures</p>
+                    <div class="redblock">
+                      <p>00</p>
+                      <p>Heures</p>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-5 offset-1">
-                    <p>00</p>
-                    <p>Jours</p>
+                    <div class="redblock">
+                      <p>00</p>
+                      <p>Jours</p>
+                    </div>
                   </div>
                   <div class="col-5">
-                    <p>00</p>
-                    <p>Heures</p>
+                    <div class="redblock">
+                      <p>00</p>
+                      <p>Heures</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -141,39 +148,44 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container ">
     <div class="row">
-      <div class="col-6">
-        <h3>Présentation</h3>
-      </div>
-      <div class="col-6">
-        <h3>Présentation</h3>
-        <p class="centered">
+      <div class="col-6 presentation">
+        <h4 class="text-left">Présentation</h4>
+        <h3 class="text-left">A propos de Devoxx France</h3>
+        <p class="text-left">
           Devoxx France est une conférence en 2 temps forts, sur 3 jours. La première journée, appelée "University", vous permet d'assister
           à des présentations longues et de participer à des ateliers. Par exemple une session sur Docker, puis un atelier
-          sur Angular 2, et enfin des présentations d'outils en fin de journée. Le jeudi et le vendredi, Devoxx France propose
-          d'abord des Keynotes, autour d'orateurs préstigieux, puis ensuite un cycle de 8 conférences, toutes les de 50 mn.
-          Vous pouvez ainsi construire votre propre agenda et suivre différentes sessions selon vos envies. Issue de la communauté
-          Java, Devoxx France s'est ouvert au fil des ans et accueille les développeurs en général. Du Web à la Sécurité,
-          en passant par le Cloud Computing, notre comité de sélection trie et sélectionne 230 propositions, sur 900 candidatures.
-          Devoxx France fait partie de la famille des conférences Devoxx (Belgique, Angleterre, Pologne, Maroc et USA). Notre
-          communauté regroupe plus de 10 000 dévelopeurs à travers le monde
+          sur Angular 2, et enfin des présentations d'outils en fin de journée.
+          <br>
+          <br> Le jeudi et le vendredi, Devoxx France propose d'abord des Keynotes, autour d'orateurs préstigieux, puis ensuite
+          un cycle de 8 conférences, toutes les de 50 mn. Vous pouvez ainsi construire votre propre agenda et suivre différentes
+          sessions selon vos envies.
+          <br>
+          <br>Issue de la communauté Java, Devoxx France s'est ouvert au fil des ans et accueille les développeurs en général.
+          Du Web à la Sécurité, en passant par le Cloud Computing, notre comité de sélection trie et sélectionne 230 propositions,
+          sur 900 candidatures.
+          <br>
+          <br> Devoxx France fait partie de la famille des conférences Devoxx (Belgique, Angleterre, Pologne, Maroc et USA).
+          Notre communauté regroupe plus de 10 000 dévelopeurs à travers le monde
         </p>
       </div>
+      <div class="col-6">
+        <img src="assets/img/2.jpg">
+      </div>
+
+
+
       <!-- INTRO INFORMATIO-->
       <div class="col-6 offset-3">
-        <p>A full time theme crafter based in Madrid, Spain. I love designing beautiful, clean and user-friendly interfaces
-          for websites.
-        </p>
-        <p>My passion is turning good ideas and products into eye-catching sites.</p>
-        <p>Sometimes I blog about design and web trends. Also I share links and my thoughts on
-          <a href="http://twitter.com/BlackTie_co">Twitter</a>. Need a free handsome bootstrap theme?
-          <a href="http://blacktie.co">Done!</a>
-        </p>
-        <p>I'm available for freelance jobs. Contact me now.</p>
-        <p>
-          <button type="button" class="btn btn-warning">I HAVE A FREELANCE JOB</button>
-        </p>
+        <h3>LES EQUIPES ENCORE EN JEU</h3>
+        <div class="row">
+          <div class="col-6 team"></div>
+          <div class="col-6 team"></div>
+        </div>
+        <div class="row">
+          <div class="col-6 offset-3 team"></div>
+        </div>
       </div>
     </div>
   </div>

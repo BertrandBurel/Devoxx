@@ -19,6 +19,8 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
+
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -39,6 +41,7 @@ export function tokenGetter() {
   imports: [
     RoutingModule,
     SharedModule,
+    AnimateOnScrollModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter,
