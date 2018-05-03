@@ -209,8 +209,9 @@ p {
 
 .imgchapter {
   background-image: url('assets/img/2.jpg');
-  background-size: 150%;
-  height: 300px;
+  background-position-y: top;
+  background-size: 300%;
+  height: 400px;
 }
 
 .item {
