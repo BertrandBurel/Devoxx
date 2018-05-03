@@ -10,6 +10,8 @@ export class AboutComponent implements OnInit {
 
 
   @ViewChild('animeObject') animeObject: ElementRef;
+  @ViewChild('animeTitle') animeTitle: ElementRef;
+  @ViewChild('animeSousTitle') animeSousTitle: ElementRef;
 
   constructor() { }
 
@@ -21,6 +23,8 @@ export class AboutComponent implements OnInit {
     const anime: TimelineMax = new TimelineMax();
 
     anime.from(this.animeObject.nativeElement, 1, { x: -200 });
+    anime.from(this.animeTitle.nativeElement, 1, { x: -2000 });
+    anime.from(this.animeSousTitle.nativeElement, 1, { x: 2000 });
 
     return anime;
   }

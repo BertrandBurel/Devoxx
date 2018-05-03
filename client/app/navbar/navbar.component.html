@@ -1,44 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark transparent">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div>LOGO ICI OK ?</div>
+    <div id="logo">LOGO ICI OK ?</div>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-          <i class="fa fa-home"></i> Home
+          <i class="fa fa-home fa-2x"></i> Home
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="/cats" class="nav-link" routerLinkActive="active">
-          <i class="fa fa-list"></i> Cats
+          <i class="fa fa-list fa-2x"></i> Cats
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-          <i class="fa fa-sign-in"></i> Login
+          <i class="fa fa-sign-in fa-2x"></i> Login
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="/register" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-          <i class="fa fa-user-plus"></i> Register
+          <i class="fa fa-user-plus fa-2x"></i> Register
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="/account" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-          <i class="fa fa-user"></i> Account ({{ auth.currentUser.username }})
+          <i class="fa fa-user fa-2x"></i> Account ({{ auth.currentUser.username }})
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="/admin" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
-          <i class="fa fa-lock"></i> Admin
+          <i class="fa fa-lock fa-2x"></i> Admin
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-          <i class="fa fa-sign-out"></i> Logout
+          <i class="fa fa-sign-out fa-2x"></i> Logout
         </a>
       </li>
     </ul>
