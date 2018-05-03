@@ -69,6 +69,7 @@ export class RegisterComponent implements OnInit {
       membre2: this.membre2,
       membre3: this.membre3,
       membre4: this.membre4,
+      role: this.role,
     });
   }
 
