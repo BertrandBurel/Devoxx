@@ -5,21 +5,23 @@ import { TweenMax, TimelineMax, TimelineLite } from 'gsap';
   selector: 'app-about',
   templateUrl: './about.component.html',
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
 
 
-  // @ViewChild('animeObject') animationObject: ElementRef;
+  @ViewChild('animeObject') animeObject: ElementRef;
 
-  constructor() {
-    // this.layerAnimation();
+  constructor() { }
+
+  ngOnInit() {
+    this.layerAnimation();
+
   }
+  layerAnimation() {
+    const anime: TimelineMax = new TimelineMax();
 
-  // layerAnimation() {
-  //   const anime: TimelineMax = new TimelineMax();
+    anime.from(this.animeObject.nativeElement, 1, { x: -200 });
 
-  //   anime.from(this.animationObject.nativeElement, 1, { x: -200 });
-
-  //   return anime;
-  // }
+    return anime;
+  }
 
 }
