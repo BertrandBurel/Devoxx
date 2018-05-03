@@ -6,23 +6,80 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="input-group" [ngClass]="setClassUsername()">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-user"></i></span>
+          <span class="input-group-text">
+            <i class="fa fa-users"></i>
+          </span>
         </div>
-        <input class="form-control" type="text" name="username" formControlName="username" placeholder="Username" autofocus>
+        <input class="form-control" type="text" name="username" formControlName="username" placeholder="Nom d'équipe" autofocus>
       </div>
       <div class="input-group" [ngClass]="setClassEmail()">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+          <span class="input-group-text">
+            <i class="fa fa-envelope"></i>
+          </span>
         </div>
         <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email">
       </div>
       <div class="input-group" [ngClass]="setClassPassword()">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-key"></i></span>
+          <span class="input-group-text">
+            <i class="fa fa-key"></i>
+          </span>
         </div>
         <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
       </div>
-      <div class="input-group">
+
+
+      <div class="input-group" [ngClass]="premiermembre()">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user-plus"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="membre1" formControlName="membre1" placeholder="Premier membre">
+      </div>
+
+
+      <div class="input-group" [ngClass]="deuxiememembre()" *ngIf="membre > 1">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user-plus"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="membre2" formControlName="membre2" placeholder="Deuxième membre">
+      </div>
+
+
+      <div class="input-group" [ngClass]="troisiememembre()" *ngIf="membre > 2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user-plus"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="troisiememembre" formControlName="membre3" placeholder="Troisième membre">
+      </div>
+
+
+      <div class="input-group" [ngClass]="quatriememembre()" *ngIf="membre > 3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user-plus"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="quatriememembre" formControlName="membre4" placeholder="Quatrième membre">
+      </div>
+
+
+      <div class="rectangle" (click)="addmember()">
+        <i class="fa fa-plus"></i> Ajouter un membre
+      </div>
+      <div class="rectangle" (click)="retirmember()" *ngIf="membre > 1">
+        <i class="fa fa-minus"></i> Retirer un membre
+      </div>
+
+
+
+      <!-- <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fa fa-black-tie"></i></span>
         </div>
@@ -31,8 +88,9 @@
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>
-      </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>
+      </div> -->
+      <button class="btn btn-warning" type="submit">
+        <i class="fa fa-user-plus"></i> Register</button>
     </form>
   </div>
 </div>
