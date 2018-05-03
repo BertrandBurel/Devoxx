@@ -2,18 +2,20 @@
 
 <app-toast [message]="toast.message"></app-toast>
 
-<div class="card" *ngIf="!isLoading">
+<div class="card" *ngIf="!isLoading ">
   <h4 class="card-header">Account settings</h4>
   <div class="card-body">
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
+
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-user"></i>
+            <i class="fa fa-users"></i>
           </span>
         </div>
-        <input class="form-control" type="text" name="username" [(ngModel)]="user.username" placeholder="Username" required>
+        <input class="form-control" type="text" name="username" [(ngModel)]="user.username" required>
       </div>
+
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">
@@ -22,18 +24,44 @@
         </div>
         <input class="form-control" type="email" name="email" [(ngModel)]="user.email" placeholder="Email" required>
       </div>
+
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-black-tie"></i>
+            <i class="fa fa-user"></i>
           </span>
         </div>
-        <select class="custom-select" name="role" [(ngModel)]="user.role">
-          <option value="" disabled>Role</option>
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
+        <input class="form-control" type="text" name="membre1" [(ngModel)]="user.membre1" required>
       </div>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="membre2" [(ngModel)]="user.membre2" required>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="membre3" [(ngModel)]="user.membre3" required>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input class="form-control" type="text" name="membre4" [(ngModel)]="user.membre4" required>
+      </div>
+
+
       <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
         <i class="fa fa-save"></i> Save
       </button>
