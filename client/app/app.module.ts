@@ -21,6 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { StatsComponent } from './stats/stats.component';
 import { ConcoursComponent } from './concours/concours.component';
 
+import { ParallaxScrollModule } from 'ng2-parallaxscroll';
+
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -49,6 +51,7 @@ export function tokenGetter() {
         // whitelistedDomains: ['localhost:3000', 'localhost:4200']
       },
     }),
+    ParallaxScrollModule,
   ],
   providers: [
     AuthService,

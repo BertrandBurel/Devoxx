@@ -1,178 +1,218 @@
-<!-- <div class="card" #animeObject>
-  <div id="bg-img">
-    <h4 class="card-header">About</h4>
-  </div>
-
-  <div class="card-body">
-    <ul>
-      <li>
-        <b>Author:</b>
-        <a href="https://github.com/DavideViolante" target="_blank">Davide Violante</a>
-      </li>
-      <li>
-        <b>GitHub:</b>
-        <a href="https://github.com/DavideViolante/Angular-Full-Stack" target="_blank">project repository</a>
-      </li>
-      <li>
-        <b>This project uses the MEAN stack:</b>
-      </li>
-      <ul>
-        <li>
-          <a href="http://www.mongoosejs.com" target="_blank">
-            <b>M</b>ongoose.js</a> (
-          <a href="https://www.mongodb.com" target="_blank">MongoDB</a>)</li>
-        <li>
-          <a href="http://www.expressjs.com" target="_blank">
-            <b>E</b>xpress.js</a>
-        </li>
-        <li>
-          <a href="https://www.angular.io" target="_blank">
-            <b>A</b>ngular 2+</a>
-        </li>
-        <li>
-          <a href="https://www.nodejs.org" target="_blank">
-            <b>N</b>ode.js</a>
-        </li>
-      </ul>
-      <li>
-        <b>Other tools and technologies used:</b>
-      </li>
-      <ul>
-        <li>
-          <a href="https://cli.angular.io" target="_blank">Angular CLI</a>
-        </li>
-        <li>
-          <a href="http://www.getbootstrap.com" target="_blank">Bootstrap</a>
-        </li>
-        <li>
-          <a href="http://www.fontawesome.io" target="_blank">Font Awesome</a>
-        </li>
-        <li>
-          <a href="https://jwt.io" target="_blank">JSON Web Token</a>
-        </li>
-        <li>
-          <a href="https://github.com/auth0/angular2-jwt/tree/v1.0" target="_blank">Angular 2 JWT</a>
-        </li>
-        <li>
-          <a href="https://github.com/dcodeIO/bcrypt.js" target="_blank">Bcrypt.js</a>
-        </li>
-      </ul>
-    </ul>
-  </div>
-</div> -->
-<!-- ========== HEADER SECTION ========== -->
-<section id="home" name="home" #animeObject></section>
-<div id="headerwrap">
+<div parallax [config]="{axis: X, speed: -0.3}" id="headerwrap">
   <div class="container">
-    <div class="logo">
-      <img src="assets/img/logo.png">
-    </div>
-    <br>
     <div class="row">
-      <h1>MINIMAL THEME</h1>
-      <br>
-      <h3>Hello, I'm Carlos. I love design.</h3>
-      <br>
-      <br>
-      <div class="col-lg-6 col-lg-offset-3">
+      <div class="col-8 offset-2">
+        <h1 id="h1title" #animeTitle>Battle Dev'alhalla</h1>
+        <h3 id="h3title" #animeSousTitle>Welcome to the next gen battle.</h3>
+        <div class="axes">
+          <img class="axe" src="assets/img/axe2.png" #animeAxeL>
+          <img class="axe" src="assets/img/axe2bis.png" #animeAxeR>
+        </div>
       </div>
     </div>
   </div>
-  <!-- /container -->
 </div>
-<!-- /headerwrap -->
 
-
-
-<!-- ========== ABOUT SECTION ========== -->
-<section id="about" name="about"></section>
 <div id="f">
-  <div class="container">
+  <div class="container-fluid mgbt-50">
     <div class="row">
-      <h3>ABOUT ME</h3>
-      <p class="centered">
-        <i class="icon icon-circle"></i>
-        <i class="icon icon-circle"></i>
-        <i class="icon icon-circle"></i>
-      </p>
-
-      <!-- INTRO INFORMATIO-->
-      <div class="col-lg-6 col-lg-offset-3">
-        <p>A full time theme crafter based in Madrid, Spain. I love designing beautiful, clean and user-friendly interfaces
-          for websites.</p>
-        <p>My passion is turning good ideas and products into eye-catching sites.</p>
-        <p>Sometimes I blog about design and web trends. Also I share links and my thoughts on
-          <a href="http://twitter.com/BlackTie_co">Twitter</a>. Need a free handsome bootstrap theme?
-          <a href="http://blacktie.co">Done!</a>
-        </p>
-        <p>I'm available for freelance jobs. Contact me now.</p>
-        <p>
-          <button type="button" class="btn btn-warning">I HAVE A FREELANCE JOB</button>
-        </p>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-10 offset-1 nextevent" data-aos="zoom-in" data-aos-anchor="#home" data-aos-anchor-placement="top-top">
+            <div class="row">
+              <div class="col-8 gris nextevent-item">
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="text-left mrgbt-20" id="trigger-left">Prochain Battle :</h3>
+                    <p class="text-left mrgbt-20">Pour participer au prochain
+                      <strong>Battle Dev'alhalla</strong>, c'est par ici.</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="ouquiquoi text-left">
+                      <i class="fa fa-map-marker"></i> Où</p>
+                    <p class="text-left">Paris, Palais des congrès</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="ouquiquoi text-left">
+                      <i class="fa fa-ticket"></i> Qui ?</p>
+                    <p class="text-left">1500 participants</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="ouquiquoi text-left">
+                      <i class="fa fa-microphone"></i> Quoi ?</p>
+                    <p class="text-left">150 match à mort en équipe</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 blue nextevent-item">
+                <div class="row mrgbt-20">
+                  <div class="col-5 offset-1">
+                    <div class="bluebock">
+                      <p>00</p>
+                      <p>Jours</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="bluebock">
+                      <p>00</p>
+                      <p>Heures</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-5 offset-1">
+                    <div class="bluebock">
+                      <p>00</p>
+                      <p>Jours</p>
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="bluebock">
+                      <p>00</p>
+                      <p>Heures</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <!-- /container -->
+  <div class="container ">
+    <div class="row">
+      <div class="col-6 presentation" data-aos="fade-right" data-aos-anchor="#trigger-left" data-aos-anchor-placement="top-top"
+        id="trigger-right">
+        <h4 class="text-left">Présentation</h4>
+        <h3 class="text-left sectiontitle">A propos de Devoxx France</h3>
+        <p class="text-left">
+          Devoxx France est une conférence en 2 temps forts, sur 3 jours. La première journée, appelée "University", vous permet d'assister
+          à des présentations longues et de participer à des ateliers. Par exemple une session sur Docker, puis un atelier
+          sur Angular 2, et enfin des présentations d'outils en fin de journée.
+          <br>
+          <br> Le jeudi et le vendredi, Devoxx France propose d'abord des Keynotes, autour d'orateurs préstigieux, puis ensuite
+          un cycle de 8 conférences, toutes les de 50 mn. Vous pouvez ainsi construire votre propre agenda et suivre différentes
+          sessions selon vos envies.
+          <br>
+          <br>Issue de la communauté Java, Devoxx France s'est ouvert au fil des ans et accueille les développeurs en général.
+          Du Web à la Sécurité, en passant par le Cloud Computing, notre comité de sélection trie et sélectionne 230 propositions,
+          sur 900 candidatures.
+          <br>
+          <br> Devoxx France fait partie de la famille des conférences Devoxx (Belgique, Angleterre, Pologne, Maroc et USA).
+          Notre communauté regroupe plus de 10 000 dévelopeurs à travers le monde
+        </p>
+      </div>
+      <div class="col-6" data-aos="fade-left" data-aos-anchor="#trigger-right" data-aos-anchor-placement="top-center">
+        <div parallax [config]="{axis: X, speed: -0.3}" class="imgchapter"></div>
+      </div>
+
+
+      <div class="col-6 offset-3" data-aos="flip-left" data-aos-anchor="#trigger-left" data-aos-anchor-placement="top-top">
+        <h3 class="sectiontitle">LES EQUIPES ENCORE EN JEU</h3>
+        <div class="row">
+          <div id="ticketrigger"></div>
+          <div class="col-6 team"></div>
+          <div class="col-6 team"></div>
+        </div>
+        <div class="row">
+          <div class="col-6 offset-3 team"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ticketrigger1"></div>
+  <div id="ticketrigger2"></div>
+  <div id="ticketrigger3"></div>
+  <div id="ticketrigger4"></div>
 </div>
-<!-- /f -->
 
 
-<!-- ========== CAROUSEL SECTION ========== -->
-<section id="portfolio" name="portfolio"></section>
 <div id="f">
   <div class="container">
     <div class="row centered">
-      <h3>SOME PROJECTS</h3>
-      <p class="centered">
-        <i class="icon icon-circle"></i>
-        <i class="icon icon-circle"></i>
-        <i class="icon icon-circle"></i>
-      </p>
-
-      <div class="col-lg-6 col-lg-offset-3">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active centered">
-              <img class="img-responsive" src="assets/img/c1.png" alt="">
+      <div class="col-6 offset-3">
+        <h3 class="sectiontitle" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor="#ticketrigger">TICKETS</h3>
+      </div>
+      <div class="col-10 offset-1">
+        <div class="row">
+          <div class="col-6">
+            <div class="ticket" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor="#ticketrigger1">
+              <div class="row">
+                <div class="col-6">
+                  <p class="price">500 €</p>
+                  <p class="pricetitle">Pass Combi
+                    <br>
+                    <span>Early Bird</span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button class="btn">Acheter</button>
+                </div>
+              </div>
             </div>
-            <div class="item centered">
-              <img class="img-responsive" src="assets/img/c2.png" alt="">
-            </div>
-            <div class="item centered">
-              <img class="img-responsive" src="assets/img/c3.png" alt="">
+            <div class="ticket" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor="#ticketrigger2">
+              <div class="row">
+                <div class="col-6">
+                  <p class="price">400 €</p>
+                  <p class="pricetitle">Pass Conférence
+                    <br>
+                    <span>Early Bird</span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button class="btn">Acheter</button>
+                </div>
+              </div>
             </div>
           </div>
-          <br>
-          <br>
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
+          <div class="col-6">
+            <div class="ticket" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor="#ticketrigger3">
+              <div class="row">
+                <div class="col-6">
+                  <p class="price">300 €</p>
+                  <p class="pricetitle">Pass University
+                    <br>
+                    <span>Early Bird</span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button class="btn">Acheter</button>
+                </div>
+              </div>
+            </div>
+            <div class="ticket" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor="#ticketrigger4">
+              <div class="row">
+                <div class="col-6">
+                  <p class="price">200 €</p>
+                  <p class="pricetitle">Pass Jsuipovre
+                    <br>
+                    <span>Early Bird</span>
+                  </p>
+                </div>
+                <div class="col-6">
+                  <button class="btn">Acheter</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- col-lg-8 -->
     </div>
-    <!-- row -->
+    <!-- col-lg-8 -->
   </div>
-  <!-- container -->
 </div>
-<!-- f -->
-
 <!-- ========== CONTACT SECTION ========== -->
 <section id="contact" name="contact"></section>
 <div id="f">
   <div class="container">
     <div class="row">
-      <h3>CONTACT ME</h3>
-      <p class="centered">
-        <i class="icon icon-circle"></i>
-        <i class="icon icon-circle"></i>
-        <i class="icon icon-circle"></i>
-      </p>
-
-      <div class="col-lg-6 col-lg-offset-3">
+      <div class="col-6 offset-3">
+        <h3>CONTACT ME</h3>
+      </div>
+      <div class="col-6 offset-3">
         <p>Some Avenue, 987
           <br/>Madrid, Spain
           <br/>+34 8984-4343</p>
@@ -184,3 +224,4 @@
     </div>
   </div>
 </div>
+<div parallax class="some-parallax"></div>

@@ -1,3 +1,4 @@
+.navbar,
 .navbar-nav,
 .nav-item a {
   height: 7vh;
@@ -5,4 +6,19 @@
 
 .nav-item a {
   line-height: 5vh;
+  font-size: 1.5em;
+}
+
+.nav-item a i {
+  font-size: 1.1em;
+}
+
+.transparent {
+  background: transparent;
+  /* position: fixed; */
+  /* top: 0; */
+}
+
+#logo {
+  color: white;
 }
