@@ -45,6 +45,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
+    "gsap": "^1.20.4",
     "jquery": "^3.3.1",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.0.13",
