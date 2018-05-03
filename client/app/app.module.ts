@@ -19,7 +19,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
+import { ParallaxScrollModule } from 'ng2-parallaxscroll';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -41,13 +41,13 @@ export function tokenGetter() {
   imports: [
     RoutingModule,
     SharedModule,
-    AnimateOnScrollModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter,
         // whitelistedDomains: ['localhost:3000', 'localhost:4200']
       },
     }),
+    ParallaxScrollModule,
   ],
   providers: [
     AuthService,
