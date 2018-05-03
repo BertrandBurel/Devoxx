@@ -1,6 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
@@ -18,7 +18,8 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { TeamsComponent } from './teams/teams.component';
+import { FormsModule } from '@angular/forms';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -35,9 +36,13 @@ export function tokenGetter() {
     AdminComponent,
     NotFoundComponent,
     NavbarComponent,
+    TeamsComponent,
+
   ],
   imports: [
     RoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
     SharedModule,
     JwtModule.forRoot({
       config: {
