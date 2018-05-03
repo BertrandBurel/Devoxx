@@ -10,7 +10,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
   templateUrl: './register.component.html',
 })
 export class RegisterComponent implements OnInit {
-
+  membre = 1;
   registerForm: FormGroup;
   username = new FormControl('', [
     Validators.required,
@@ -27,10 +27,35 @@ export class RegisterComponent implements OnInit {
     Validators.required,
     Validators.minLength(6),
   ]);
+  membre1 = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(40),
+    Validators.pattern('[a-zA-Z0-9_-\\s]*'),
+  ]);
+  membre2 = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(40),
+    Validators.pattern('[a-zA-Z0-9_-\\s]*'),
+  ]);
+  membre3 = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(40),
+    Validators.pattern('[a-zA-Z0-9_-\\s]*'),
+  ]);
+  membre4 = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(40),
+    Validators.pattern('[a-zA-Z0-9_-\\s]*'),
+  ]);
   role = new FormControl('', [
     Validators.required,
   ]);
-
+  note = {};
+  stats = [];
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               public toast: ToastComponent,
@@ -41,7 +66,16 @@ export class RegisterComponent implements OnInit {
       username: this.username,
       email: this.email,
       password: this.password,
+      membre1: this.membre1,
+      membre2: this.membre2,
+      membre3: this.membre3,
+      membre4: this.membre4,
       role: this.role,
+      note: this.note = { elimine: -1, round1: { index: 1, uxdesign: -1, fonctionnalites: -1, pitch: -1 },
+        round2: { index: 2, uxdesign: -1, fonctionnalites: -1, pitch: -1 },
+        round3: { index: 3, uxdesign: -1, fonctionnalites: -1, pitch: -1 } },
+      stats: this.stats,
+
     });
   }
 
@@ -56,6 +90,19 @@ export class RegisterComponent implements OnInit {
   setClassPassword() {
     return { 'has-danger': !this.password.pristine && !this.password.valid };
   }
+  premiermembre() {
+    return { 'has-danger': !this.membre1.pristine && !this.membre1.valid };
+  }
+  deuxiememembre() {
+    return { 'has-danger': !this.membre2.pristine && !this.membre2.valid };
+  }
+  troisiememembre() {
+    return { 'has-danger': !this.membre3.pristine && !this.membre3.valid };
+  }
+  quatriememembre() {
+    return { 'has-danger': !this.membre4.pristine && !this.membre4.valid };
+  }
+
 
   register() {
     this.userService.register(this.registerForm.value).subscribe(
@@ -65,5 +112,15 @@ export class RegisterComponent implements OnInit {
       },
       error => this.toast.setMessage('email already exists', 'danger'),
     );
+  }
+  addmember() {
+    if (this.membre < 4) {
+      this.membre = this.membre + 1;
+    }
+  }
+  retirmember() {
+    if (this.membre > 0) {
+      this.membre = this.membre - 1;
+    }
   }
 }

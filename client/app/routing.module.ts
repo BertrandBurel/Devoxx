@@ -12,9 +12,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
+import { StatsComponent } from './stats/stats.component';
+import { ConcoursComponent } from './concours/concours.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
+  { path: 'stats', component: StatsComponent },
+  { path: 'concours', component: ConcoursComponent },
   { path: 'cats', component: CatsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
