@@ -2,6 +2,7 @@ import * as express from 'express';
 
 import CatController from './controllers/CatController';
 import UserController from './controllers/UserController';
+import ParticipeController from './controllers/ParticipeController';
 // import cat from './models/cat';
 // import user from './models/user';
 
@@ -11,6 +12,7 @@ export default function routes(app) {
 
   const cat = new CatController();
   const user = new UserController();
+  const participe = new ParticipeController();
 
   // cats
   router.route('/cats').get(cat.getAll);
@@ -28,6 +30,13 @@ export default function routes(app) {
   router.route('/user/:id').get(user.get);
   router.route('/user/:id').put(user.update);
   router.route('/user/:id').delete(user.delete);
+
+  router.route('/participes').get(participe.getAll);
+  router.route('/participes/count').get(participe.count);
+  router.route('/participe').post(participe.insert);
+  router.route('/participe/:id').get(participe.get);
+  router.route('/participe/:id').put(participe.update);
+  router.route('/participe/:id').delete(participe.delete);
 
   // Apply the routes to our application with the prefix /api
   app.use('/api', router);

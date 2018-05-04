@@ -51,8 +51,8 @@ export class AboutComponent implements OnInit {
 
   rebour() {
     // tslint:disable-next-line:variable-name
-    const date1 = new Date();
-    const date2 = new Date(this.cats[0].date);
+    const date1: any = new Date();
+    const date2: any = new Date(this.cats[0].date);
     this.sec = (date2 - date1) / 1000;
     const n = 24 * 3600;
     if (this.sec > 0) {
@@ -60,7 +60,6 @@ export class AboutComponent implements OnInit {
       this.h = Math.floor((this.sec - (this.j * n)) / 3600);
       this.mn = Math.floor((this.sec - ((this.j * n + this.h * 3600))) / 60);
       this.sec = Math.floor(this.sec - ((this.j * n + this.h * 3600 + this.mn * 60)));
-      console.log(this.sec);
 
     }
     const source = interval(1000);

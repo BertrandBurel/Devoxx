@@ -44,8 +44,8 @@ export class CatsComponent implements OnInit {
 
   rebour() {
     // tslint:disable-next-line:variable-name
-    const date1 = new Date();
-    const date2 = new Date(this.cats[0].date);
+    const date1: any = new Date();
+    const date2: any = new Date(this.cats[0].date);
     this.sec = (date2 - date1) / 1000;
     const n = 24 * 3600;
     if (this.sec > 0) {
@@ -96,14 +96,15 @@ export class CatsComponent implements OnInit {
     this.getCats();
   }
 
-  editCat(cat: Cat) {
+  editCat(cat) {
+    // window.location.reload();
+    console.log(cat);
     this.catService.editCat(cat).subscribe(
       () => {
+        console.log('ici');
+
         this.isEditing = false;
-        this.cat = cat;
-        this.toast.setMessage('item edited successfully.', 'success');
       },
-      error => console.log(error),
     );
   }
 

@@ -1,3 +1,5 @@
-<p>
-  concours works!
-</p>
+<div class="card" *ngIf="!isEditing">
+  <h4 class="card-header">Add new cat</h4>
+  <button (click)="participer()" *ngIf="cats[0].nbrP > particip[0].players.length">Participer au concours</button>
+  <div></div>
+</div>

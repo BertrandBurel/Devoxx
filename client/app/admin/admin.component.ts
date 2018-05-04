@@ -52,9 +52,7 @@ export class AdminComponent implements OnInit {
   }
 
   enableEditing(i, user) {
-    console.log(i);
     const test = 'round' + (i + 1);
-    console.log(user.note[test].pitch);
     this.isEditing = true;
     this.user = user;
     this.note = user.note[test];
