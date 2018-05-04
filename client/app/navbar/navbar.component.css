@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Skranji');
 .navbar,
 .navbar-nav,
 .nav-item a {
@@ -19,6 +20,15 @@
   /* top: 0; */
 }
 
-#logo {
+#logo a {
   color: white;
+  font-family: 'Skranji', cursive;
+}
+
+#logo a:hover {
+  text-decoration: none;
+}
+
+#logo img {
+  width: 30px;
 }
