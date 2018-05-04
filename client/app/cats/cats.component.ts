@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { CatService } from '../services/cat.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { Cat } from '../shared/models/cat.model';
+import { interval } from 'rxjs/observable/interval';
 
 @Component({
   selector: 'app-cats',
@@ -16,30 +17,58 @@ export class CatsComponent implements OnInit {
   cats: Cat[] = [];
   isLoading = true;
   isEditing = false;
+  sec = 0;
+  test;
 
   addCatForm: FormGroup;
-  name = new FormControl('', Validators.required);
-  age = new FormControl('', Validators.required);
-  weight = new FormControl('', Validators.required);
+  date = new FormControl('', Validators.required);
+  nbrP = new FormControl('', Validators.required);
+  theme = new FormControl('', Validators.required);
 
   constructor(private catService: CatService,
-              private formBuilder: FormBuilder,
-              public toast: ToastComponent) { }
+    private formBuilder: FormBuilder,
+    public toast: ToastComponent) { }
 
   ngOnInit() {
     this.getCats();
+
     this.addCatForm = this.formBuilder.group({
-      name: this.name,
-      age: this.age,
-      weight: this.weight,
+      date: this.date,
+      nbrP: this.nbrP,
+      theme: this.theme,
     });
   }
 
+  // tslint:disable-next-line:member-ordering
+  affiche = document.getElementById('Compte');
+
+  rebour() {
+    // tslint:disable-next-line:variable-name
+    const date1 = new Date();
+    const date2 = new Date(this.cats[0].date);
+    this.sec = (date2 - date1) / 1000;
+    const n = 24 * 3600;
+    if (this.sec > 0) {
+      const j = Math.floor(this.sec / n);
+      const h = Math.floor((this.sec - (j * n)) / 3600);
+      const mn = Math.floor((this.sec - ((j * n + h * 3600))) / 60);
+      this.sec = Math.floor(this.sec - ((j * n + h * 3600 + mn * 60)));
+      this.test = '' + j + ' j ' + h + ' h ' + mn + ' min ' + this.sec + ' s ';
+
+    }
+
+
+    const source = interval(1000);
+    const subscribe = source.subscribe(val => this.rebour());
+  }
   getCats() {
     this.catService.getCats().subscribe(
       data => this.cats = data,
       error => console.log(error),
-      () => this.isLoading = false,
+      () => {
+        this.isLoading = false;
+        this.rebour();
+      },
     );
   }
 
