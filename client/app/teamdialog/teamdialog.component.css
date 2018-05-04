@@ -1,0 +1,26 @@
+.titre {
+  color: red;
+}
+
+.example-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.example-header-image {
+  background-size: cover;
+  border-radius: 50%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.team {
+  margin: 0 auto;
+}
+
+.padding-10 {
+  padding: 50px;
+}

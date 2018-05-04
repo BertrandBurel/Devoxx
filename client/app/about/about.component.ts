@@ -6,12 +6,24 @@ import { CatService } from '../services/cat.service';
 import { Cat } from '../shared/models/cat.model';
 import { interval } from 'rxjs/observable/interval';
 
+import { UserService } from '../services/user.service';
+import { User } from '../shared/models/user.model';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
+  users: User[] = [];
+  isEditing = false;
+  isLoading = true;
+  cat = new Cat();
+  cats: Cat[] = [];
+  sec;
+  h;
+  mn;
+  j;
 
   @ViewChild('animeObject') animeObject: ElementRef;
   @ViewChild('animeTitle') animeTitle: ElementRef;
@@ -19,17 +31,11 @@ export class AboutComponent implements OnInit {
   @ViewChild('animeAxeL') animeAxeL: ElementRef;
   @ViewChild('animeAxeR') animeAxeR: ElementRef;
 
-  constructor(private catService: CatService) { }
-
-  cat = new Cat();
-  cats: Cat[] = [];
-  isLoading = true;
-  sec;
-  h;
-  mn;
-  j;
+  constructor(private userService: UserService,
+    private catService: CatService) { }
 
   ngOnInit() {
+    this.getUsers();
     this.getCats();
     this.layerAnimation();
     AOS.init({
@@ -65,7 +71,6 @@ export class AboutComponent implements OnInit {
     const source = interval(1000);
     const subscribe = source.subscribe(val => this.rebour());
   }
-
   layerAnimation() {
     const anime: TimelineMax = new TimelineMax();
 
@@ -75,4 +80,12 @@ export class AboutComponent implements OnInit {
       .from(this.animeAxeR.nativeElement, 1, { x: 2000 }, 3);
     return anime;
   }
+  getUsers() {
+    this.userService.getUsers().subscribe(
+      data => this.users = data,
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
+  }
+
 }

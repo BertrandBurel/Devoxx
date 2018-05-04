@@ -1,0 +1,16 @@
+<div class="example-card">
+
+
+  <div class="text-center team">Team: {{ data.user.username }}
+  </div>
+
+  <div class="padding-10">
+    <img mat-card-image src="{{ data.user.img }}" alt="Photo of a Shiba Inu">
+    <ul>
+      <li class="card-title text-center" *ngIf="data.user.membre1 !== ''">membre: {{ data.user.membre1 }} </li>
+      <li class="card-title text-center" *ngIf="data.user.membre2 !== ''">membre: {{ data.user.membre2 }} </li>
+      <li class="card-title text-center" *ngIf="data.user.membre3 !== ''">membre: {{ data.user.membre3 }} </li>
+      <li class="card-title text-center" *ngIf="data.user.membre4 !== ''">membre: {{ data.user.membre4 }} </li>
+    </ul>
+  </div>
+</div>

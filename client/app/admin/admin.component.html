@@ -7,8 +7,10 @@
   <div class="card-body">
     <button (click)="createevent()" *ngIf="!isCreate">New event</button>
     <button (click)="closecreateevent()" *ngIf="isCreate">Close</button>
-    <div  *ngIf="isCreate"><app-cats> </app-cats> </div>
-    
+    <div *ngIf="isCreate">
+      <app-cats> </app-cats>
+    </div>
+
     <div *ngIf="!isEditing && !isCreate">
       <table *ngFor="let user of users; let i = index" class="table table-bordered">
         <div>

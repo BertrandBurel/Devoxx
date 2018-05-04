@@ -1,5 +1,27 @@
-<div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Add new cat</h4>
-  <button (click)="participer()" *ngIf="cats[0].nbrP > particip[0].players.length">Participer au concours</button>
-  <div></div>
+<div class="container-fluid bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 offset-3">
+        <h3 class="sectiontitle">Résultats du concours en cours :</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+        <img src="assets/img/bracket.png" alt="bracket">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid footer">
+  <div class="row">
+    <div class="col-6 offset-3 text-center">
+      <div *ngIf="!isEditing">
+        <h4>Vous pouvez vous inscrire pour le prochain concours :</h4>
+        <p>Pour cela, il suffit de vous identifier et de cliquer sur le bouton ci-dessous.</p>
+        <button class="btn btn-light" (click)="participer()" *ngIf="cats[0].nbrP > particip[0].players.length">Participer au concours</button>
+        <div></div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -25,9 +25,9 @@ export class AdminComponent implements OnInit {
   addCatForm: FormGroup;
 
   constructor(public auth: AuthService,
-              public toast: ToastComponent,
-              private userService: UserService,
-              private catService: CatService) { }
+    public toast: ToastComponent,
+    private userService: UserService,
+    private catService: CatService) { }
 
   ngOnInit() {
     this.getUsers();
