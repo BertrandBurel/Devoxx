@@ -39,31 +39,35 @@
             <td> PITCH: {{ user.note.round1.pitch }} </td>
             <td> UXDESIGN: {{ user.note.round1.uxdesign }} </td>
             <td> FONCTIONNALITES: {{ user.note.round1.fonctionnalites }} </td>
-            <td><i class="fa fa-5x" *ngIf="user.note.elimine === false"></i>
-              <i class="fa fa-ban" *ngIf="user.note.elimine !== false"></i>
+            <td>
+              <i class="fa fa-ban" *ngIf="user.note.elimine === 1"></i>
             </td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="enableEditing(0, user)" [disabled]="user.note.elimine !== false">
                 <i class="fa fa-pencil"></i> Edit</button>
             </td>
           </tr>
-          <tr *ngIf="user.note.round1.pitch !== -1 && user.note.round1.uxdesign !== -1 && user.note.round1.fonctionnalites !== -1 ">
+          <tr *ngIf="user.note.round1.pitch !== -1 && user.note.round1.uxdesign !== -1 && user.note.round1.fonctionnalites !== -1 && user.note.elimine !== 1 ">
             <td>Manche 2</td>
             <td> PITCH: {{ user.note.round2.pitch }} </td>
             <td> UXDESIGN: {{ user.note.round2.uxdesign }} </td>
             <td> FONCTIONNALITES: {{ user.note.round2.fonctionnalites }} </td>
-            <td></td>
+            <td>
+                <i class="fa fa-ban" *ngIf="user.note.elimine === 2"></i>
+              </td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="enableEditing(1, user)" [disabled]="user.note.elimine !== false">
                 <i class="fa fa-pencil" ></i> Edit</button>
             </td>
           </tr>
-          <tr *ngIf="user.note.round2.pitch !== -1 && user.note.round2.uxdesign !== -1 && user.note.round2.fonctionnalites !== -1 ">
+          <tr *ngIf="user.note.round2.pitch !== -1 && user.note.round2.uxdesign !== -1 && user.note.round2.fonctionnalites !== -1 && user.note.elimine !== 2 ">
             <td>Manche 3</td>
             <td> PITCH: {{ user.note.round3.pitch }} </td>
             <td> UXDESIGN: {{ user.note.round3.uxdesign }} </td>
             <td> FONCTIONNALITES: {{ user.note.round3.fonctionnalites }} </td>
-            <td></td>
+            <td>
+                <i class="fa fa-ban" *ngIf="user.note.elimine === 3"></i>
+              </td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="enableEditing(2, user)" [disabled]="user.note.elimine !== false">
                 <i class="fa fa-pencil"></i> Edit</button>
@@ -84,7 +88,7 @@
             <p>Fonctionnalites</p>
             <input class="form-control mr-2" type="number" name="fonctionnalites" [(ngModel)]="note.fonctionnalites" min="0" max="20"
               required>
-            <button class="btn btn-sm btn-danger mr-2" (click)="elimine()">
+            <button class="btn btn-sm btn-danger mr-2" (click)="elimine(user)">
                 <i class="fa fa-times"></i> Eliminé</button>
             <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid">
               <i class="fa fa-floppy-o"></i> Save</button>

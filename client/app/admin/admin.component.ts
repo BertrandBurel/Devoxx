@@ -19,7 +19,7 @@ export class AdminComponent implements OnInit {
 
   constructor(public auth: AuthService,
               public toast: ToastComponent,
-    private userService: UserService) { }
+              private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -56,35 +56,37 @@ export class AdminComponent implements OnInit {
     this.isEditing = false;
   }
   editUser(user) {
+    // window.location.reload();
+    console.log(user);
     this.userService.editUser(user).subscribe(
       () => {
+        console.log('ici');
+
         this.isEditing = false;
       },
     );
   }
   saveUser(user) {
     user.stats.push([]);
-    const test = ([{ moy1: (user.note.round1.pitch + user.note.round1.uxdesign + user.note.round1.fonctionnalites) / 3 }]);
+    const test = ([{
+      moy1: ((user.note.round1.pitch + user.note.round1.uxdesign + user.note.round1.fonctionnalites) / 3),
+      pitch1: user.note.round1.pitch,
+      uxdesign1: user.note.round1.uxdesign, fonctionnalites1: user.note.round1.fonctionnalites}]);
     user.stats[user.stats.length - 1].push(test);
-    user.stats[user.stats.length - 1][user.stats[user.stats.length - 1].length - 1].push({ pitch1: user.note.round1.pitch });
-    user.stats[user.stats.length - 1][user.stats[user.stats.length - 1].length - 1].push({ uxdesign1: user.note.round1.uxdesign });
-    user.stats[user.stats.length - 1][user.stats[user.stats.length - 1].length - 1].push({
-      fonctionnalites1: user.note.round1.fonctionnalites });
     if (user.note.round2.pitch !== -1) {
-      const test2 = ([{ moy2: (user.note.round2.pitch + user.note.round2.uxdesign + user.note.round2.fonctionnalites) / 3 }]);
+      const test2 = ([{
+        moy2: ((user.note.round2.pitch + user.note.round2.uxdesign + user.note.round2.fonctionnalites) / 3),
+        pitch2: user.note.round2.pitch,
+        uxdesign2: user.note.round2.uxdesign, fonctionnalites2: user.note.round2.fonctionnalites}]);
       user.stats[user.stats.length - 1].push(test2);
-      user.stats[user.stats.length - 1][user.stats[user.stats.length - 1].length - 1].push({ pitch2: user.note.round2.pitch });
-      user.stats[user.stats.length - 1][user.stats[user.stats.length - 1].length - 1].push({ uxdesign2: user.note.round2.uxdesign });
-      user.stats[user.stats.length - 1][user.stats[user.stats.length - 1].length - 1].push({
-        fonctionnalites2: user.note.round2.fonctionnalites });
     }
     if (user.note.round3.pitch !== -1) {
-      const test3 = ([{ moy3: (user.note.round3.pitch + user.note.round3.uxdesign + user.note.round3.fonctionnalites) / 3 }]);
+      const test3 = ([{ moy3: ((user.note.round3.pitch + user.note.round3.uxdesign + user.note.round3.fonctionnalites) / 3),
+        pitch3: user.note.round3.pitch,
+        uxdesign3: user.note.round3.uxdesign, fonctionnalites3: user.note.round3.fonctionnalites }]);
       user.stats.push(test3);
-      user.stats[user.stats.length - 1].push({ pitch3: user.note.round3.pitch });
-      user.stats[user.stats.length - 1].push({ uxdesign3: user.note.round3.uxdesign });
-      user.stats[user.stats.length - 1].push({ fonctionnalites3: user.note.round3.fonctionnalites });
     }
+    user.stats.push({ manch: user.note.elimine });
     user.note.round1.pitch = -1;
     user.note.round2.pitch = -1;
     user.note.round3.pitch = -1;
@@ -102,9 +104,13 @@ export class AdminComponent implements OnInit {
     );
   }
 
-  elimine() {
+  elimine(user) {
     if (window.confirm('Are you sure you want to elimine this personne ?') === true) {
-      this.user.note.elimine = true;
+      if (user.note.round3.pitch === -1 && user.note.round2.pitch !== -1) {
+        this.user.note.elimine = 2;
+      } else if (user.note.round2.pitch === -1) {
+        this.user.note.elimine = 1;
+      }
       this.userService.editUser(this.user).subscribe(
         () => {
           this.isEditing = false;

@@ -22,6 +22,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { FormsModule } from '@angular/forms';
 import { StatsComponent } from './stats/stats.component';
 import { ConcoursComponent } from './concours/concours.component';
+<<<<<<< HEAD
 import 'hammerjs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -42,6 +43,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
 import { TeamdialogComponent } from './teamdialog/teamdialog.component';
+=======
+
+import { ParallaxScrollModule } from 'ng2-parallaxscroll';
+
+>>>>>>> 738613090bf1684a46e8903e4c86c41894721b62
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -90,6 +96,7 @@ export function tokenGetter() {
         // whitelistedDomains: ['localhost:3000', 'localhost:4200']
       },
     }),
+    ParallaxScrollModule,
   ],
   providers: [
     AuthService,
