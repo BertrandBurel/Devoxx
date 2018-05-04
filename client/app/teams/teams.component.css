@@ -17,3 +17,6 @@ h2 {
 .parfait {
   color: green;
 }
+.card {
+  max-width: 200px;
+}
