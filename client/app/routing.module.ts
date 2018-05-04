@@ -18,6 +18,7 @@ import { ConcoursComponent } from './concours/concours.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'stats', component: StatsComponent },
   { path: 'concours', component: ConcoursComponent },
   { path: 'cats', component: CatsComponent },
