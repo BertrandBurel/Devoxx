@@ -1,3 +1,4 @@
+import { ParticipeService } from './services/participe.service';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { JwtModule } from '@auth0/angular-jwt';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -101,6 +102,7 @@ export function tokenGetter() {
     AuthGuardAdmin,
     CatService,
     UserService,
+    ParticipeService,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

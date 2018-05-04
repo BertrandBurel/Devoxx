@@ -28,14 +28,7 @@
         </div>
         <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
       </div>
-      <div class="input-group" [ngClass]="imagemembre()" >
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <i class="fa fa-user-plus"></i>
-          </span>
-        </div>
-        <input class="form-control" type="text" name="img" formControlName="img" placeholder="Photo Groupe">
-      </div>
+
 
       <div class="input-group" [ngClass]="premiermembre()">
         <div class="input-group-prepend">
@@ -88,7 +81,9 @@
 
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-black-tie"></i></span>
+          <span class="input-group-text">
+            <i class="fa fa-black-tie"></i>
+          </span>
         </div>
         <select class="custom-select" name="role" formControlName="role">
           <option value="" selected disabled>Role</option>

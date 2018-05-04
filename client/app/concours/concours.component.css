@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Skranji');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Skranji', cursive;
+  font-weight: 300;
+  color: #333;
+}
+
+.container img {
+  max-width: 60vw;
+}
+
+.bg {
+  margin-top: -7vh;
+  padding: 100px !important;
+  background: url(assets/img/6bis.jpg);
+  background-size: 100%;
+}
+
+.sectiontitle {
+  color: #235dc8 !important;
+  margin-bottom: 30px;
+}
+
+.footer {
+  height: 200px;
+  padding: 50px !important;
+  background: #0054a6;
+  color: white;
+}
+
+.footer h4 {
+  color: white;
+}
+
+button {
+  cursor: pointer;
+}
