@@ -454,3 +454,7 @@ a.wiggle-me:hover {
   font-weight: bold;
   font-size: 1.5em;
 }
+
+.bluebock p {
+  color: white !important;
+}
