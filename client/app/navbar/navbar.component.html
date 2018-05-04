@@ -37,6 +37,16 @@
         </a>
       </li>
       <li class="nav-item">
+        <a routerLink="/stats" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          <i class="fa fa-newspaper-o"></i> Stats
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/concours" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          <i class="fa fa-calculator"></i> Concours
+        </a>
+      </li>
+      <li class="nav-item">
         <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
           <i class="fa fa-sign-out fa-2x"></i> Logout
         </a>

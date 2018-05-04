@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import { UserService } from '../services/user.service';
+import { User } from '../shared/models/user.model';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { TeamdialogComponent } from '../teamdialog/teamdialog.component';
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
@@ -18,11 +21,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ],
 })
 export class TeamsComponent implements OnInit {
+  user;
+  users: User[] = [];
+  isLoading = true;
   headerState = 'inactive';
   buttonState = true;
   header = 'devteam';
   titre = 'Gallerie des equipes';
-  person = 'Anet';
+  // person = 'Anet';
   teams = [
   { first_name: 'Tatum', last_name: 'Vernon', email: 'tvernon0@lycos.com', gender: 'Female', company: 'Youopia' },
   { first_name: 'Anet', last_name: 'Bellis', email: 'abellis1@cnn.com', gender: 'Female', company: 'Oloo' },
@@ -30,7 +36,9 @@ export class TeamsComponent implements OnInit {
   { first_name: 'Addison', last_name: 'Lawther', email: 'alawther3@walmart.com', gender: 'Male', company: 'Yoveo' },
   { first_name: 'Anya', last_name: 'Franzman', email: 'afranzman4@bravesites.com', gender: 'Female', company: 'Twitterbeat' }];
 
+  // tslint:disable-next-line:variable-name
   first_name = '';
+  // tslint:disable-next-line:variable-name
   last_name = '';
   email = '';
   gender = '';
@@ -53,14 +61,31 @@ export class TeamsComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private dialog: MatDialog, private userService: UserService) { }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  getUsers() {
+    this.userService.getUsers().subscribe(
+      data => this.users = data,
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
   }
   // animateHeader() {
   //   // alert('Button clicked');
   //   // this.buttonState = (this.buttonState ? false : true);
   //   this.headerState = (this.headerState === 'inactive' ? 'active' : 'inactive');
   // }
+  onOpendDialog(user) {
+    this.user = user;
+    this.dialog.open(TeamdialogComponent, {
+      height: '400px',
+      width: '600px',
+      data: { user: this.user },
+    });
+  }
 
 }
