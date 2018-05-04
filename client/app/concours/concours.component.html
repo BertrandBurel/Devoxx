@@ -20,7 +20,7 @@
         <h4>Vous pouvez vous inscrire pour le prochain concours :</h4>
         <p>Pour cela, il suffit de vous identifier et de cliquer sur le bouton ci-dessous.</p>
         <button class="btn btn-light" (click)="participer()" *ngIf="cats[0].nbrP > particip[0].players.length">Participer au concours</button>
-        <div></div>
+        <div *ngIf="particip[0].players.length >= cats[0].nbrP">Complet</div>
       </div>
     </div>
   </div>

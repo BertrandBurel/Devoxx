@@ -11,6 +11,7 @@
       <li class="card-title text-center" *ngIf="data.user.membre2 !== ''">membre: {{ data.user.membre2 }} </li>
       <li class="card-title text-center" *ngIf="data.user.membre3 !== ''">membre: {{ data.user.membre3 }} </li>
       <li class="card-title text-center" *ngIf="data.user.membre4 !== ''">membre: {{ data.user.membre4 }} </li>
+      <li class="card-title text-center">Score moyen : {{ data.user.note.round1.uxdesign/3 + data.user.note.round1.fonctionnalites/3 + data.user.note.round1.pitch/3 }} </li>
     </ul>
   </div>
 </div>

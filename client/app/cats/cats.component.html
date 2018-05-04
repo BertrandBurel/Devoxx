@@ -4,20 +4,18 @@
 
 <div class="card mb-3" *ngIf="!isLoading">
     {{ test }}
-  <h4 class="card-header">Current cats ({{ cats.length }})</h4>
   <div class="card-body">
     <table class="table table-bordered">
       <thead class="thead-light">
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Weight</th>
-          <th scope="col">Actions</th>
+          <th scope="col">Date</th>
+          <th scope="col">Nbr de participants</th>
+          <th scope="col">Theme</th>
         </tr>
       </thead>
       <tbody *ngIf="cats.length === 0">
         <tr>
-          <td colspan="4">There are no cats in the DB. Add a new cat below.</td>
+          <td colspan="4">Pas de concours.</td>
         </tr>  
       </tbody>
       <tbody *ngIf="!isEditing">
@@ -48,7 +46,7 @@
 </div>
 
 <div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Add new cat</h4>
+  <h4 class="card-header">Nouvel évènement</h4>
   <div class="card-body">
     <form class="form-inline" [formGroup]="addCatForm" (ngSubmit)="addCat()">
       <input class="form-control mr-2" type="text" name="date" formControlName="date" placeholder="date">
