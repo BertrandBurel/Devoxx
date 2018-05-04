@@ -20,11 +20,6 @@
         </a>
       </li>
       <li class="nav-item">
-        <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-          <i class="fa fa-sign-in fa-2x"></i> Login
-        </a>
-      </li>
-      <li class="nav-item">
         <a routerLink="/register" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
           <i class="fa fa-user-plus fa-2x"></i> Register
         </a>
@@ -50,13 +45,18 @@
         </a>
       </li>
       <li class="nav-item">
-        <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-          <i class="fa fa-sign-out fa-2x"></i> Logout
+        <a routerLink="/teams" class="nav-link" routerLinkActive="active">
+          <i class="fa fa-users fa-2x"></i> teams
         </a>
       </li>
       <li class="nav-item">
-        <a routerLink="/teams" class="nav-link" routerLinkActive="active" >
-          <i class="fa fa-users fa-2x"></i> teams
+        <a routerLink="/login" class="nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+          <i class="fa fa-sign-in fa-2x"></i> Login
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/logout" class="nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+          <i class="fa fa-sign-out fa-2x"></i> Logout
         </a>
       </li>
     </ul>

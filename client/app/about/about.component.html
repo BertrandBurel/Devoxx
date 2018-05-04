@@ -65,13 +65,13 @@
                   <div class="col-5 offset-1">
                     <div class="bluebock">
                       <p>00</p>
-                      <p>Jours</p>
+                      <p>Minutes</p>
                     </div>
                   </div>
                   <div class="col-5">
                     <div class="bluebock">
                       <p>00</p>
-                      <p>Heures</p>
+                      <p>Secondes</p>
                     </div>
                   </div>
                 </div>
@@ -105,20 +105,61 @@
           Pologne, Maroc et USA). Notre communauté regroupe plus de 10 000 dévelopeurs à travers le monde
         </p>
       </div>
+      <div id="trigger-left2"></div>
+      <div id="trigger-right2"></div>
+      <div id="trigger-left3"></div>
       <div class="col-6">
         <div class="imgchapter" data-aos="fade-left" data-aos-anchor="#trigger-right" data-aos-anchor-placement="top-center"></div>
         <img class="viking" src="assets/img/viking.png" data-aos="fade-left" data-aos-anchor="#trigger-right2" data-aos-anchor-placement="top-center">
       </div>
 
-      <div class="col-6 offset-3" data-aos="flip-left" data-aos-anchor="#trigger-left" data-aos-anchor-placement="top-top">
+      <div class="col-10 offset-1" data-aos="flip-left" data-aos-anchor="#trigger-left" data-aos-anchor-placement="top-top">
         <h3 class="sectiontitle">LES EQUIPES ENCORE EN JEU</h3>
         <div class="row">
           <div id="ticketrigger"></div>
-          <div class="col-6 team"></div>
-          <div class="col-6 team"></div>
+          <div class="col-6 team" data-aos="flip-left" data-aos-anchor="#trigger-left2" data-aos-anchor-placement="top-top">
+            <mat-card class="example-card">
+              <div class="card-image">
+                <img class="teamrestante" src="{{ users[1].img }}">
+                <div class="card-title">{{ users[1].username }} </div>
+              </div>
+              <mat-card-content class="card-content">
+                <p> Membre 1: {{ users[1].membre1 }}</p>
+                <p> Membre 2: {{ users[1].membre2 }}</p>
+                <p> Membre 3: {{ users[1].membre3 }}</p>
+                <p> Membre 4: {{ users[1].membre4 }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="col-6 team" data-aos="flip-right" data-aos-anchor="#trigger-right2" data-aos-anchor-placement="top-top">
+            <mat-card class="example-card">
+              <div class="card-image">
+                <img class="teamrestante" src="{{ users[2].img }}">
+                <div class="card-title">{{ users[2].username }} </div>
+              </div>
+              <mat-card-content class="card-content">
+                <p> Membre 1: {{ users[2].membre1 }}</p>
+                <p> Membre 2: {{ users[2].membre2 }}</p>
+                <p> Membre 3: {{ users[2].membre3 }}</p>
+                <p> Membre 4: {{ users[2].membre4 }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
         </div>
         <div class="row">
-          <div class="col-6 offset-3 team"></div>
+          <div class="col-6 offset-3 team" data-aos="flip-up" data-aos-anchor="#trigger-left3" data-aos-anchor-placement="top-top">
+            <mat-card class="example-card">
+              <div class="card-image">
+                <img class="teamrestante" src="{{ users[3].img }}">
+                <div class="card-title">{{ users[3].username }} </div>
+              </div>
+              <mat-card-content class="card-content">
+                <p> Membre 1: {{ users[3].membre1 }}</p>
+                <p> Membre 2: {{ users[3].membre2 }}</p>
+                <p> Membre 3: {{ users[3].membre3 }}</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
         </div>
       </div>
     </div>

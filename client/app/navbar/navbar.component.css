@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Skranji');
+nav {
+  box-shadow: none !important;
+}
+
 .navbar,
 .navbar-nav,
 .nav-item a {

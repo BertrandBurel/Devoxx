@@ -18,8 +18,8 @@ export class AdminComponent implements OnInit {
   note;
 
   constructor(public auth: AuthService,
-              public toast: ToastComponent,
-              private userService: UserService) { }
+    public toast: ToastComponent,
+    private userService: UserService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -71,19 +71,23 @@ export class AdminComponent implements OnInit {
     const test = ([{
       moy1: ((user.note.round1.pitch + user.note.round1.uxdesign + user.note.round1.fonctionnalites) / 3),
       pitch1: user.note.round1.pitch,
-      uxdesign1: user.note.round1.uxdesign, fonctionnalites1: user.note.round1.fonctionnalites}]);
+      uxdesign1: user.note.round1.uxdesign, fonctionnalites1: user.note.round1.fonctionnalites
+    }]);
     user.stats[user.stats.length - 1].push(test);
     if (user.note.round2.pitch !== -1) {
       const test2 = ([{
         moy2: ((user.note.round2.pitch + user.note.round2.uxdesign + user.note.round2.fonctionnalites) / 3),
         pitch2: user.note.round2.pitch,
-        uxdesign2: user.note.round2.uxdesign, fonctionnalites2: user.note.round2.fonctionnalites}]);
+        uxdesign2: user.note.round2.uxdesign, fonctionnalites2: user.note.round2.fonctionnalites
+      }]);
       user.stats[user.stats.length - 1].push(test2);
     }
     if (user.note.round3.pitch !== -1) {
-      const test3 = ([{ moy3: ((user.note.round3.pitch + user.note.round3.uxdesign + user.note.round3.fonctionnalites) / 3),
+      const test3 = ([{
+        moy3: ((user.note.round3.pitch + user.note.round3.uxdesign + user.note.round3.fonctionnalites) / 3),
         pitch3: user.note.round3.pitch,
-        uxdesign3: user.note.round3.uxdesign, fonctionnalites3: user.note.round3.fonctionnalites }]);
+        uxdesign3: user.note.round3.uxdesign, fonctionnalites3: user.note.round3.fonctionnalites
+      }]);
       user.stats.push(test3);
     }
     user.stats.push({ manch: user.note.elimine });

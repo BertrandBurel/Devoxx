@@ -2,12 +2,19 @@ import { Component, Directive, ViewChild, ElementRef, OnInit } from '@angular/co
 import { TweenMax, TimelineMax, TimelineLite, TweenLite } from 'gsap';
 import * as $ from 'jquery';
 import * as AOS from 'aos';
+
+import { UserService } from '../services/user.service';
+import { User } from '../shared/models/user.model';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
+  users: User[] = [];
+  isEditing = false;
+  isLoading = true;
 
   @ViewChild('animeObject') animeObject: ElementRef;
   @ViewChild('animeTitle') animeTitle: ElementRef;
@@ -15,9 +22,10 @@ export class AboutComponent implements OnInit {
   @ViewChild('animeAxeL') animeAxeL: ElementRef;
   @ViewChild('animeAxeR') animeAxeR: ElementRef;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.getUsers();
     this.layerAnimation();
     AOS.init({
       duration: 1200,
@@ -32,5 +40,12 @@ export class AboutComponent implements OnInit {
     anime.from(this.animeAxeL.nativeElement, 1, { x: -2000 }, 3)
       .from(this.animeAxeR.nativeElement, 1, { x: 2000 }, 3);
     return anime;
+  }
+  getUsers() {
+    this.userService.getUsers().subscribe(
+      data => this.users = data,
+      error => console.log(error),
+      () => this.isLoading = false,
+    );
   }
 }
