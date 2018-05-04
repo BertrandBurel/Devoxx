@@ -54,9 +54,6 @@ export class RegisterComponent implements OnInit {
   role = new FormControl('', [
     Validators.required,
   ]);
-  img = new FormControl('', [
-    Validators.required,
-  ]);
   note = {};
   stats = [];
   constructor(private formBuilder: FormBuilder,
@@ -73,7 +70,6 @@ export class RegisterComponent implements OnInit {
       membre2: this.membre2,
       membre3: this.membre3,
       membre4: this.membre4,
-      img: this.img,
       role: this.role,
       note: this.note = { elimine: -1, round1: { index: 1, uxdesign: -1, fonctionnalites: -1, pitch: -1 },
         round2: { index: 2, uxdesign: -1, fonctionnalites: -1, pitch: -1 },
@@ -105,9 +101,6 @@ export class RegisterComponent implements OnInit {
   }
   quatriememembre() {
     return { 'has-danger': !this.membre4.pristine && !this.membre4.valid };
-  }
-  imagemembre() {
-    return { 'has-danger': !this.img.pristine && !this.img.valid };
   }
 
 

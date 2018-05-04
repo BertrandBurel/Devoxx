@@ -10,7 +10,6 @@ const userSchema = new mongoose.Schema({
   membre2: String,
   membre3: String,
   membre4: String,
-  img: String,
 });
 
 // Before saving the user, hash the password
