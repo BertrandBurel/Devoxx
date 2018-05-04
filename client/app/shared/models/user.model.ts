@@ -8,4 +8,5 @@ export class User {
   membre4?: string;
   role?: string;
   note?: object;
+  img?: string;
 }

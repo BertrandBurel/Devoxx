@@ -1,0 +1,11 @@
+.titre{
+    color:red;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-12">
+    <h1> {{ titre }}</h1>
+  </div>
+  <!-- <div class="row">
+      <div *ngFor="let user of users">
+        <h1 *ngIf="user.role !=='admin'"> {{ user.username }}</h1>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-4" *ngFor="let user of users" [@teamsAnimation]="state">
+      <div class="card blue-grey darken-1" *ngIf="user.role !=='admin'">
+        <div class="card-image">
+          <img src="{{ user.img }}">
+          <span class="card-title">{{ user.username }} </span>
+        </div>
+        <div class="card-content white-text">
+          <span class="card-title">Details</span>
+          <p>Courriel: {{user.email}}</p>
+          <p>Role: {{user.role}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">{{ user.name }}</a>
+        </div>
+        <button mat-raised-button color="accent" (click)="onOpendDialog(user)">Team Details</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+  </div>
+</div>

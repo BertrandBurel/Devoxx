@@ -1,3 +1,10 @@
+#bg-img {
+  
+  background-size: 100%;
+  border-radius: none;
+  height: 93vh;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Skranji');
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro');
@@ -57,6 +64,7 @@ p {
    ========================================================================== */
 
 #headerwrap {
+  
   background: url("assets/img/5bis.jpg") no-repeat center top;
   margin-top: -7vh;
   padding-top: 20px;
